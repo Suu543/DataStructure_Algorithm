@@ -54,6 +54,8 @@ Our solution depends on from which vertex we start.
 
 For example, if we start from B, we will have another solution over here. So based on the starting point, our solutions might be different.
 
+다른 요소의 `Pre-requisite` 스택에 나중에 들어가야 한다. 왜냐하면 스택은(LIFO) 마지막에 들어간 요소가 처음으로 나오기 때문이다. `Pre-requisite`이 먼저 나와야, 그다음 단계가 나오는데 논리적으로 말이 되기 때문이다. 이러한 이유 때문에 재귀 방식을 사용한다.
+
 ```python
 from collections import defaultdict
 

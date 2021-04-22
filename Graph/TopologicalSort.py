@@ -14,13 +14,11 @@ class Graph:
         self.graph[vertex].append(edge)
 
     def topologicalSortUtil(self, vertex, visited, stack):
-        print("visited", visited)
-        print("stack", stack)
+
         visited.append(vertex)
 
         for related_vertex in self.graph[vertex]:
             if related_vertex not in visited:
-                print(related_vertex)
                 self.topologicalSortUtil(related_vertex, visited, stack)
 
         stack.insert(0, vertex)
@@ -34,8 +32,7 @@ class Graph:
             if key_vertex not in visited:
                 self.topologicalSortUtil(key_vertex, visited, stack)
 
-        print("visited", visited)
-        print("stack", stack)
+        print(stack)
 
 
 customGraph = Graph(8)
