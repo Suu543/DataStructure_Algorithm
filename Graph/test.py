@@ -7,16 +7,13 @@ class Graph:
         self.numberofVertices = numberofVertices
 
     def __str__(self):
-        print("Graph Info")
-        print(f"Number of Nodes: {self.numberofVertices}")
-        print(f"Grape: {self.graph}")
+        print(self.graph)
         return ""
 
     def addEdge(self, vertex, edge):
         self.graph[vertex].append(edge)
 
     def topologicalSortUtil(self, vertex, visited, stack):
-
         visited.append(vertex)
 
         for related_vertex in self.graph[vertex]:
@@ -46,7 +43,5 @@ customGraph.addEdge('F', 'G')
 customGraph.addEdge('B', 'D')
 customGraph.addEdge('B', 'C')
 customGraph.addEdge('D', 'F')
-print(customGraph)
 
-# All dependencies are respected
 customGraph.topologicalSort()
