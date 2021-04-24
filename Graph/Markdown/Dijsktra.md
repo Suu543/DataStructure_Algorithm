@@ -2,7 +2,7 @@
 
 ![img](https://cdn-images-1.medium.com/max/1000/1*2FzWOFuCBfJLLOyqJeiMrQ.png)
 
-`SingleSourceShortestPath`를 공부하면서, `DFS`를 이용해  `Unweighted Graph`에서는 최단거리를 찾을 수 있지만, `Weighted Graph`에서는 그렇지 않다고 했다
+`SingleSourceShortestPath`를 공부하면서, `DFS`를 이용해  `Unweighted Graph`에서는 최단거리를 찾을 수 있지만, `Weighted Graph`에서는 그렇지 않다고 했다.
 
 `Weighted Graph`에서 최단거리를 계산할 때  `Dijkstra's Algorithm`을 사용할 수 있다.
 
