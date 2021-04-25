@@ -352,3 +352,55 @@ break
 return visited, path
 ```
 
+## Dijkstra's Algorithm with negative cycle
+
+A path is called a negative cycle if:
+
+There is a cycle (a cycle is a path fo edges or vertices wherein a vertex is reachable from itself)
+
+Total weight of cycle is a negative number
+
+![img](https://cdn-images-1.medium.com/max/1000/1*Y-FMR18TACmnbdrnc46SGg.png)
+
+![img](https://cdn-images-1.medium.com/max/1000/1*zkGikYjDOI4s29aiTrLJqQ.png)
+
+`Negative Cycle`이 발생하는 그래프에서는, `최소 경로(The minimum distance)`를 찾을 수 없다.
+
+Path from A to B
+
+= -6 + 1 = -5
+
+= (one more cycle) = -5 + 3 + (-6) + 1 = -7
+
+= (one more cycle) =  -7 + 3 + (-6) + 1 = -9
+
+The more cycles that we take, every time the distances starts decreasing.
+
+Dijkstra algorithm cannot catch the negative cycle. In order to solve this problem, we can user another algorithm which is called Bellman Ford Algorithm, which deals with negative cycle successfully.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
