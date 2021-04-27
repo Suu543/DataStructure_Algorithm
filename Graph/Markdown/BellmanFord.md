@@ -56,6 +56,17 @@ If any node is achieved better distance in previous iteration, then that better 
 
 ![img](https://cdn-images-1.medium.com/max/1000/1*x0rcGZ0FV1kzxdUawcTFFQ.png)
 
+## Why V - 1?
+이 예시의 경우, E 값만 알아도, B, D로 가는 경로를 결정할 수 있다.
+- Iteration 1: B D
+- Iteration 2: A B C D
+- Iteration 3: A B C D
+
+사실 이 경우 Nodes가 총 5개 임에도 불구하고, 3 번만 돌아도, 최단 거리를 알 수 있다.
+하지만, 최악의 경우를 기준으로 알고리즘을 일반화 해야하기 때문에
+A --> B --> C --> D
+이 모양의 경우 한 번에 하나의 값만 알 수 있기 때문에, 최소 3번은 순회를 해야 A 에서 B, C, D의 값을 알 수 있다.
+
 ## Bellman Ford in Python
 
 ```python
