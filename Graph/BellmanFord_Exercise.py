@@ -33,7 +33,7 @@ class Graph:
 
         self.print_solution(dist)
 
-    def bellmanFord_Application_Version(self, src):
+    def bellmanFordWormhole(self, src):
         dist = {i: float("Inf") for i in self.nodes}
         dist[src] = 0
 
@@ -74,7 +74,7 @@ def run():
             g.addEdge(s, e, -t)
 
         # 음수 값이 v - 1 번의 최단거리 계산 결과에 영향을 미치는가 확인
-        isAffected = g.bellmanFord_Application_Version(1)
+        isAffected = g.bellmanFordWormhole(1)
         if isAffected:
             print("Yes")
         else:
