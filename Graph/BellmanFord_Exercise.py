@@ -32,6 +32,7 @@ class Graph:
                 return
 
         self.print_solution(dist)
+        return
 
     def bellmanFordWormhole(self, src):
         dist = {i: float("Inf") for i in self.nodes}
@@ -52,33 +53,35 @@ class Graph:
 
 
 def run():
+    results = []
     num_of_test = int(input())
 
+    # branch = 지점, road = 도로, wormhole = 웜홀
     for _ in range(num_of_test):
-        n, m, w = map(int, input().split())
-        g = Graph(n)
+        branch, road, wormhole = map(int, input().split())
+        graph = Graph(branch)
 
-        # n = 지점
-        for node in range(1, n + 1):
-            g.addNode(node)
+        for node in range(1, branch + 1):
+            graph.addNode(node)
 
-        # m = 도로
-        for _ in range(m):
-            s, e, t = map(int, input().split())
-            g.addEdge(s, e, t)
-            g.addEdge(e, s, t)
+        for _ in range(road):
+            start, end, time = map(int, input().split())
+            graph.addEdge(start, end, time)
+            graph.addEdge(end, start, time)
 
-        # w = 웜홀
-        for _ in range(w):
-            s, e, t = map(int, input().split())
-            g.addEdge(s, e, -t)
+        for _ in range(wormhole):
+            start, end, time = map(int, input().split())
+            graph.addEdge(start, end, -time)
 
         # 음수 값이 v - 1 번의 최단거리 계산 결과에 영향을 미치는가 확인
-        isAffected = g.bellmanFordWormhole(1)
+        isAffected = graph.bellmanFordWormhole(1)
         if isAffected:
-            print("Yes")
+            results.append("Yes")
         else:
-            print("No")
+            results.append("No")
+
+    for result in results:
+        print(result)
 
 
 run()
